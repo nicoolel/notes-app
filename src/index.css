@@ -11,3 +11,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.notes-list {
+  display: grid;
+  grid-gap: 1rem;
+  /* how many columns we want the grid to have */
+  /* i want four columns, each with auto size. column can't be smaller than 250px and bigger than 1 fractional unit (whatever space is avail). specifies a range than a single value */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.note {
+  background-color: #fec68a;
+  border-radius: 10px;
+  /* relative to the font size */
+  padding: 1.4rem;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.note-footer {
+  display: flex;
+  /* vertically aligns items to the center */
+  align-items: center;
+  /* first child at the beginning of container, last child at the end */
+  justify-content: space-between;
+}
