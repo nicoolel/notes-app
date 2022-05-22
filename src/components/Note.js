@@ -2,7 +2,9 @@ import React from "react"
 import { MdDeleteForever } from "react-icons/md"
 
 // destructure props from NotesList
-const Note = ({ id, text, date }) => {
+const Note = ({ id, text, date, handleDeleteNote }) => {
+
+
     return (
         // basic structure of notes 
         <div className="note">
@@ -12,7 +14,10 @@ const Note = ({ id, text, date }) => {
             <div className="note-footer">
                 {/* pass in date prop */}
                 <small>{date}</small>
-                <MdDeleteForever className="delete-icon" size="1.3em" />
+                <MdDeleteForever 
+                    className="delete-icon" 
+                    size="1.3em" 
+                    onClick={() => handleDeleteNote(id)}/>
             </div>
         </div>
     );
