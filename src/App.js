@@ -13,22 +13,22 @@ const App = () => {
       {
       id: nanoid(),
       text: "This is my first note",
-      date: "16/05/2022"
+      date: "05/16/2022"
       },
       {
         id: nanoid(),
         text: "This is my second note",
-        date: "16/05/2022"
+        date: "05/17/2022"
       },
       {
         id: nanoid(),
         text: "This is my third note",
-        date: "16/05/2022"
+        date: "05/18/2022"
       },
       {
         id: nanoid(),
         text: "This is my fourth note",
-        date: "18/05/2022"
+        date: "05/19/2022"
       }
     ]);
 
@@ -39,8 +39,8 @@ const App = () => {
 
   // empty dependency array = loads on first run
   useEffect(() => {
-    const savedNotes = JSON.parse(
-      localStorage.getItem('notesData'))
+    // localStorage.clear()
+    const savedNotes = JSON.parse(localStorage.getItem('notesData'))
     if (savedNotes){
       setNotes(savedNotes)
     }
@@ -91,7 +91,6 @@ const App = () => {
           handleDeleteNote={deleteNote} />
       </div>
     </div>
-
   );
 };
 
